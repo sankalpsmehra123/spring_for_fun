@@ -65,7 +65,7 @@ With annotations and java-based configuration, Spring simplifies the setup confi
 
 ### Dependency Management
 
-Spring's ***Inversion of Controle*** containers handles the lifecycle and configuration of application objects, which simplifies dependency management.
+Spring's [***Inversion Of Control***](/src/main/java/com/springforfun/demo/ioc/inversion_of_control.md) containers handles the lifecycle and configuration of application objects, which simplifies dependency management.
 
 ### Data Access
 
@@ -94,4 +94,30 @@ With Spring boot and Spring cloud, it's easier to develope microservice based ap
 
 ## Links
 
-[***Inversion Of Control***](/src/main/java/com/springforfun/demo/ioc/inversion_of_controle.md)
+[***Inversion Of Control***](/src/main/java/com/springforfun/demo/ioc/inversion_of_control.md)
+
+
+## Understanding Components Of Spring
+
+#### Types of classes
+
+1. AccountInfo: class which holds data of the accoount (Data holders a.k.a. Model classes). We might need multiple instances of all the data holders in an enterprise application.
+2. AccountService: class which holds functionality (Functionality holders a.k.a Service classes). We only need one instance of all the functionality holder in an enterprise application as it is stateless.
+
+### Component 1: POJO
+These consist of all the classes that need to be instantiated multipule times using old java syntax. like AccountInfo in the above example.
+
+### Component 2: Configuration Metadata
+This is the blueprint of your spring application. This means defining the beans and how they should be wired together. Like using @Component in the HelloSpringMessage.java and Greeter.java to let spring know your applications blueprint so that objects of these classes can be provided whenver they are needed.
+
+### Component 3: Spring Container
+Spring creates this component and manages the spring beans. It will also take charge of bean creation, configuration and management.
+
+![Spring Container Diagram](image.png)
+
+## Links
+
+1. [IOC](/src/main/java/com/springforfun/demo/ioc/inversion_of_control.md)
+2. [Java Config](/src/main/java/com/springforfun/demo/javaconfig/java_config.md)
+3. [Bean Behaviour](/src/main/java/com/springforfun/demo/beanbehaviour/bean_behaviour.md)
+3. [AutoWiring](/src/main/java/com/springforfun/demo/autowiring/autowiring.md)
